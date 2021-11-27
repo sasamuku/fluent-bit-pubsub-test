@@ -30,7 +30,7 @@ services:
     volumes:
         - ./fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
         - ./pubsub.so:/pubsub.so
-        - ./jwtfile:/jwtfile
+        - ./jwt.json:/jwt.json
     ports:
       - "24224:24224"
     # overwrite default command
