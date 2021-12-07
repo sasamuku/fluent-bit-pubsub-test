@@ -13,18 +13,6 @@ services:
       options:
         fluentd-address: "localhost:24224"
         fluentd-async-connect: "false"
-  web2:
-    image: nginx:latest
-    ports:
-      - "8889:80" 
-    depends_on:
-      - fluent-bit
-    command: [nginx-debug, '-g', 'daemon off;']
-    logging:
-      driver: fluentd
-      options:
-        fluentd-address: "localhost:24224"
-        fluentd-async-connect: "false"
   fluent-bit:
     image: fluent/fluent-bit
     volumes:
